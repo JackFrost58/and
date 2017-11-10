@@ -6,29 +6,30 @@
         <link href="index.css" rel="stylesheet">
         <title>Название сайта</title>
         <script>
-           function DeleteTask(){
+          function DeleteTask(){
+    var element = document.getElementById('li');
+	document.body.list.removeChild(element);
 
-          }
+}
 
-          function NewRecord() {
-            var InputRecord = document.getElementById("place").value;
-              /*if(InputRecord === '') {alert('Введите задачу')}
-               else {*/
-                  var element =  document.getElementById('ul');
-                  var item = document.createElement('li');
-                  var text = document.createTextNode(InputRecord);
-                  item.;
-
-                  element.appendChild(item);
-
-
-
-
-
-
-
-
-          }
+function NewRecord() {
+  var InputRecord = document.getElementById("place").value;
+    if(InputRecord === '') {alert('Введите задачу')}
+     else {
+        var element =  document.getElementById('list');
+        var item = document.createElement('li');
+        var btn = document.createElement('input');
+         btn.type = 'button';
+         btn.value = 'Delete';
+         btn.setAttribute('onclick','obj.DeleteTask()');
+         item.innerHTML = InputRecord;
+         element.appendChild(item);
+         item.appendChild(btn);
+         document.getElementById("place").value = "";
+        
+     }
+            
+}
     </script>
     </head>
     <body>
