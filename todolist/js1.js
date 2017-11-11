@@ -11,7 +11,11 @@ function NewRecord() {
         var element =  document.getElementById('list');
         var item = document.createElement('li');
         var btn = document.createElement('input');
-         item.id = n;
+        var checkbox = document.createElement('input');
+         checkbox.id = n;
+         checkbox.type = 'checkbox';
+         checkbox.setAttribute('onclick','TaskComp(this)');
+         item.id =n;
          btn.id = n;
          btn.className = 'doc';
          btn.type = 'button';
@@ -20,9 +24,21 @@ function NewRecord() {
          item.innerHTML = InputRecord;
          element.appendChild(item);
          item.appendChild(btn);
+         item.appendChild(checkbox);
          document.getElementById("place").value = "";
          n = ++n;
-     }
-         
+     }   
+    }
+
+function TaskComp (box) {
     
+    if(box.checked){
+        document.getElementById(box.id).style.textDecoration = "line-through";
+    }
+    else
+    {
+        document.getElementById(box.id).style.textDecoration = "none";
+        }
+    
+        
 }
