@@ -1,8 +1,8 @@
 function DeleteTask(e){
    var elem = document.getElementById(e.id);
 return elem.parentNode.removeChild(elem)
-   
 }
+
 var n = 0;
 function NewRecord() {
   var InputRecord = document.getElementById("place").value;
@@ -31,14 +31,11 @@ function NewRecord() {
     }
 
 function TaskComp (box) {
-    
     if(box.checked){
         document.getElementById(box.id).style.textDecoration = "line-through";
     }
     else
     {
         document.getElementById(box.id).style.textDecoration = "none";
-        }
-    
-        
+        }  
 }
