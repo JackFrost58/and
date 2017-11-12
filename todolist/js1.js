@@ -6,7 +6,10 @@ return elem.parentNode.removeChild(elem)
 var n = 0;
 function NewRecord() {
   var InputRecord = document.getElementById("place").value;
-    if(InputRecord === '') {alert('Введите задачу')}
+     if(InputRecord === '' || InputRecord.search(/\s/g) === 0 ) { 
+        document.getElementById("place").value = '';
+        alert('Введите задачу');
+     }
      else {
         var element =  document.getElementById('list');
         var item = document.createElement('li');
