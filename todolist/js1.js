@@ -1,30 +1,28 @@
-function DeleteTask(e){
-   var elem = document.getElementById(e.id);
-   return elem.parentNode.removeChild(elem)
-   
-}
 var n = 0;
 var btnadd = document.getElementById('B_add');
 var ul =  document.getElementById('list');
+var TextField = document.getElementById("place");
 
 btnadd.onclick = function(){
-   NewRecord();
+   NewTask();
 }
 
-function NewRecord() {
-  var InputRecord = document.getElementById("place").value;
-    if(InputRecord === '' || InputRecord.search(/\s/g) === 0 ) { 
-        document.getElementById("place").value = '';
+function NewTask() {
+  var text = TextField.value;
+  text.trim();
+   if(text === '') { 
+      TextField.value ='';
         alert('Введите задачу')}
      else {
-        var task = document.createElement('li');
+         var task = document.createElement('li');
          task.id = ++n;
-         task.innerHTML = InputRecord;
+         task.innerHTML = text;
          ul.appendChild(task);
          task.appendChild(btnDel());
          task.appendChild(checkbox());
-         document.getElementById("place").value = "";
-            }   
+         TextField.value = ""  
+        }
+           
     }
 
 function btnDel(){
@@ -34,7 +32,7 @@ function btnDel(){
          btn.type = 'button';
          btn.value = 'Delete';
          btn.onclick = function(){
-         DeleteTask(this);
+             DeleteTask(this);
          }
          return btn;
 }
@@ -44,13 +42,12 @@ function checkbox(){
          checkbox.id = n;
          checkbox.type = 'checkbox';
          checkbox.onclick =function(){
-         TaskComp(this);
+             TaskComp(this);
          }
        return checkbox;
 }
 
 function TaskComp (box) {
-    
     if(box.checked){
       document.getElementById(box.id).style.textDecoration = "line-through";
     }
@@ -58,3 +55,8 @@ function TaskComp (box) {
     {        document.getElementById(box.id).style.textDecoration = "none";
         }  
 }
+
+function DeleteTask(e){
+   var elem = document.getElementById(e.id);
+return elem.parentNode.removeChild(elem)
+   }
