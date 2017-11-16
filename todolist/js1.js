@@ -9,8 +9,7 @@ btnadd.onclick = function(){
 
 function NewTask() {
   var text = TextField.value;
-  text.trim();
-   if(text === '') { 
+    if(text === '' || text.trim() === '') { 
       TextField.value ='';
         alert('Введите задачу')}
      else {
@@ -50,12 +49,12 @@ function TaskComp (box) {
     if(box.checked){
       document.getElementById(box.id).style.textDecoration = "line-through";
     }
-    else
-    {        document.getElementById(box.id).style.textDecoration = "none";
+    else{
+       document.getElementById(box.id).style.textDecoration = "none";
         }  
 }
 
 function DeleteTask(e){
    var elem = document.getElementById(e.id);
-return elem.parentNode.removeChild(elem)
+   return elem.parentNode.removeChild(elem)
    }
