@@ -22,7 +22,6 @@ function NewTask() {
          task.appendChild(checkbox());
          TextField.value = ""  
         }
-           
     }
 
 function btnDel(){
