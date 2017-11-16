@@ -20,14 +20,13 @@ function NewRecord() {
         alert('Введите задачу')}
      else {
         var task = document.createElement('li');
-         task.id = n;
+         task.id = ++n;
          task.innerHTML = InputRecord;
          ul.appendChild(task);
          task.appendChild(btnDel());
          task.appendChild(checkbox());
          document.getElementById("place").value = "";
-         n = ++n;
-     }   
+            }   
     }
 
 function btnDel(){
