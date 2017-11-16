@@ -1,17 +1,15 @@
 function DeleteTask(e){
    var elem = document.getElementById(e.id);
-return elem.parentNode.removeChild(elem)
+   return elem.parentNode.removeChild(elem)
    
 }
 var n = 0;
-
 var btnadd = document.getElementById('B_add');
+var ul =  document.getElementById('list');
 
 btnadd.onclick = function(){
    NewRecord();
 }
-
-var ul =  document.getElementById('list');
 
 function NewRecord() {
   var InputRecord = document.getElementById("place").value;
@@ -36,7 +34,7 @@ function btnDel(){
          btn.type = 'button';
          btn.value = 'Delete';
          btn.onclick = function(){
-             DeleteTask(this);
+         DeleteTask(this);
          }
          return btn;
 }
@@ -46,7 +44,7 @@ function checkbox(){
          checkbox.id = n;
          checkbox.type = 'checkbox';
          checkbox.onclick =function(){
-             TaskComp(this);
+         TaskComp(this);
          }
        return checkbox;
 }
