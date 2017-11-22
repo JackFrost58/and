@@ -1,0 +1,17 @@
+ul{list-style-type: none;}
+.doc{
+    position:absolute;
+   right: 10px;
+}
+ul li {
+  
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  width: 33%;
+  font-size: 18px;
+    }
+ul li.check {
+    color: black;
+    text-decoration: none;
+}
+
