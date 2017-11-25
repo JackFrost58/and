@@ -7,5 +7,3 @@ var NumberFieldID = 'number';
 var FieldbtnsID = 'buttons';
 var FieldsliderID = 'slider';
 var clickEvent = "click";
-
-var RollItem = ["Knife", "Rifle", "Pistol", "Shotgun"];
